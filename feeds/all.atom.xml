@@ -1,10 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>manojjadhav</title><link href="https://jadhavmanoj.github.io/" rel="alternate"></link><link href="https://jadhavmanoj.github.io/feeds/all.atom.xml" rel="self"></link><id>https://jadhavmanoj.github.io/</id><updated>2018-01-11T10:02:00+05:30</updated><entry><title>AWS Lambda call on existing S3 objects in python</title><link href="https://jadhavmanoj.github.io/blog/2018/01/11/aws-lambda-call-on-existing-objects" rel="alternate"></link><published>2018-01-11T10:02:00+05:30</published><updated>2018-01-11T10:02:00+05:30</updated><author><name>Manoj Jadhav</name></author><id>tag:jadhavmanoj.github.io,2018-01-11:/blog/2018/01/11/aws-lambda-call-on-existing-objects</id><summary type="html">&lt;p&gt;In This article explain how to invoke lambda on &lt;strong&gt;existing s3 object&lt;/strong&gt;. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>manojjadhav</title><link href="http://localhost:8000/" rel="alternate"></link><link href="http://localhost:8000/feeds/all.atom.xml" rel="self"></link><id>http://localhost:8000/</id><updated>2018-01-16T00:00:00+05:30</updated><entry><title>Python Django Signal</title><link href="http://localhost:8000/blog/2018/01/16/python-django-signal" rel="alternate"></link><published>2018-01-16T00:00:00+05:30</published><updated>2018-01-16T00:00:00+05:30</updated><author><name>Manoj Jadhav</name></author><id>tag:localhost,2018-01-16:/blog/2018/01/16/python-django-signal</id><summary type="html">&lt;p&gt;In this article I am going to highlight issue with Django Signal.&lt;/p&gt;
+&lt;p&gt;I find problem in signal was &lt;strong&gt;“sometimes signals in django are triggered twice”&lt;/strong&gt;. I thought issue might be with environment. I googled and also search on Stack-overflow. later I come to know why it happens.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It’s whether …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;In this article I am going to highlight issue with Django Signal.&lt;/p&gt;
+&lt;p&gt;I find problem in signal was &lt;strong&gt;“sometimes signals in django are triggered twice”&lt;/strong&gt;. I thought issue might be with environment. I googled and also search on Stack-overflow. later I come to know why it happens.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It’s whether the code that connects the signals is imported more than once.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;it means at the time of import singnal gets connected and that failed to get what we want to achieve using &lt;strong&gt;signal&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Solution:&lt;/p&gt;
+&lt;p&gt;its very simple to avoid such things using &lt;strong&gt;dispatch_uid&lt;/strong&gt; in method as suggested in django doc.&lt;/p&gt;
+&lt;p&gt;Also need to take care of what &lt;strong&gt;dispatch_uid&lt;/strong&gt; we use.&lt;/p&gt;
+&lt;p&gt;for example. If I use  &lt;code&gt;time.time()&lt;/code&gt; as dispatch_uid then it will not works.&lt;/p&gt;
+&lt;p&gt;So we should choose a convention like &lt;strong&gt;my_app.models.function_name&lt;/strong&gt; as Dmitry suggests, then the second time the module is imported, the signal will not be connected twice because the dispatch_uid has not changed. &lt;code&gt;It's up to you not to reuse the same dispatch id to register different callback functions with the same signal&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Hope you enjoys by reading this!&lt;/p&gt;</content></entry><entry><title>AWS Lambda invoke on existing S3 objects in python</title><link href="http://localhost:8000/blog/2018/01/11/aws-lambda-invoke-on-existing-objects" rel="alternate"></link><published>2018-01-11T10:02:00+05:30</published><updated>2018-01-11T10:02:00+05:30</updated><author><name>Manoj Jadhav</name></author><id>tag:localhost,2018-01-11:/blog/2018/01/11/aws-lambda-invoke-on-existing-objects</id><summary type="html">&lt;p&gt;In This article explain how to invoke lambda on &lt;strong&gt;existing s3 object&lt;/strong&gt;. &lt;/p&gt;
 &lt;p&gt;As we know lambda can be invoke on Object event like creation etc. There is no way to handle existing object or there is no such event which will invoke lambda on existing s3 object.&lt;/p&gt;
 &lt;p&gt;All we have …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In This article explain how to invoke lambda on &lt;strong&gt;existing s3 object&lt;/strong&gt;. &lt;/p&gt;
 &lt;p&gt;As we know lambda can be invoke on Object event like creation etc. There is no way to handle existing object or there is no such event which will invoke lambda on existing s3 object.&lt;/p&gt;
-&lt;p&gt;All we have to do to invoke lambda manually for each and every s3 object.&lt;/p&gt;</content></entry><entry><title>The second article</title><link href="https://jadhavmanoj.github.io/blog/2012/12/01/the-second-article" rel="alternate"></link><published>2012-12-01T10:02:00+05:30</published><updated>2012-12-01T10:02:00+05:30</updated><author><name>Manoj Jadhav</name></author><id>tag:jadhavmanoj.github.io,2012-12-01:/blog/2012/12/01/the-second-article</id><summary type="html">&lt;p&gt;See below intra-site link examples in Markdown format.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://jadhavmanoj.github.io/blog/2018/01/11/aws-lambda-call-on-existing-objects"&gt;a link relative to the current file&lt;/a&gt;
-&lt;a href="https://jadhavmanoj.github.io/blog/2018/01/11/aws-lambda-call-on-existing-objects"&gt;a link relative to the content root&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;See below intra-site link examples in Markdown format.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://jadhavmanoj.github.io/blog/2018/01/11/aws-lambda-call-on-existing-objects"&gt;a link relative to the current file&lt;/a&gt;
-&lt;a href="https://jadhavmanoj.github.io/blog/2018/01/11/aws-lambda-call-on-existing-objects"&gt;a link relative to the content root&lt;/a&gt;&lt;/p&gt;</content></entry></feed>
+&lt;p&gt;All we have to do to invoke lambda manually for each and every s3 object.&lt;/p&gt;
+&lt;p&gt;I achieved this by iterate through each file in your target S3 bucket and for each it will execute the desired lambda function against it emulating a put operation.&lt;/p&gt;
+&lt;p&gt;You're probably going to want to put a very long execution time allowance against this function&lt;/p&gt;
+&lt;p&gt;Steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;create record for every s3 object as given below: (append every s3 record into Records list)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; params = {
+            &amp;#39;Records&amp;#39;: [
+                {
+                    &amp;#39;eventVersion&amp;#39;: &amp;#39;2.0&amp;#39;,
+                    &amp;#39;eventTime&amp;#39;: u&amp;#39;2018-01-16T07:54:28.323Z&amp;#39;,
+                    &amp;#39;requestParameters&amp;#39;: {
+                        &amp;#39;sourceIPAddress&amp;#39;: u&amp;#39;123.201.192.96&amp;#39;
+                        },
+                    &amp;#39;s3&amp;#39;: {
+                        &amp;#39;configurationId&amp;#39;: u&amp;#39;task-dev:function.method_name&amp;#39;,
+                        &amp;#39;object&amp;#39;: {
+                            &amp;#39;eTag&amp;#39;: &amp;#39;a961fdbd7cc2a2522b3c453181965573&amp;#39;,
+                            &amp;#39;sequencer&amp;#39;: &amp;#39;005A5DAFB445353DF7&amp;#39;,
+                            &amp;#39;key&amp;#39;: &amp;#39;Screen+Shot+2017-11-27+at+11.57.40+AM.png&amp;#39;,
+                            &amp;#39;size&amp;#39;: 487383
+                        },
+                        &amp;#39;bucket&amp;#39;: {
+                            &amp;#39;arn&amp;#39;: &amp;#39;arn:aws:s3:::sample_bucket_name&amp;#39;,
+                            &amp;#39;name&amp;#39;: &amp;#39;sample_bucket_name&amp;#39;,
+                            &amp;#39;ownerIdentity&amp;#39;: {&amp;#39;principalId&amp;#39;: u&amp;#39;AP0LPLI499QA&amp;#39;}
+                        },
+                        &amp;#39;s3SchemaVersion&amp;#39;: &amp;#39;1.0&amp;#39;
+                    },
+                    &amp;#39;responseElements&amp;#39;: {
+                        &amp;#39;x-amz-id-2&amp;#39;: &amp;#39;8DgYnJE6zF2TVw0V4ES9BCM1GeXMa0xFDlivb2+HvPpmh7paFfg5K5xwfxQVEmFfH476O1uPQHw=&amp;#39;,
+                        &amp;#39;x-amz-request-id&amp;#39;: u&amp;#39;157B0FB8B32D4A40&amp;#39;
+                    },
+                    &amp;#39;awsRegion&amp;#39;: u&amp;#39;us-west-2&amp;#39;,
+                    &amp;#39;eventName&amp;#39;: u&amp;#39;ObjectCreated:Put&amp;#39;,
+                    &amp;#39;userIdentity&amp;#39;: {
+                        &amp;#39;principalId&amp;#39;: &amp;#39;AWS:AIDAI2FTBVZZPQ3OACVBU&amp;#39;
+                    },
+                    &amp;#39;eventSource&amp;#39;: &amp;#39;aws:s3&amp;#39;}
+            ]
+        }
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;just make sure in above params "s3.object", "bucket" are proper.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;next step is to install boto3 lib using pip (pip install boto3).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;make sure you have properly configure aws credential in your system.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;lambda_client = &lt;strong&gt;boto3.client('lambda', region_name='us-west-2')&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;now invoke lambda&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;response = lambda_client.invoke(FunctionName="&lt;function_name&gt;",
+                                               InvocationType = 'Event',
+                                               Payload = simplejson.dumps(params))&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;response will return 202 as status code with other informations. and your done !!!!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content></entry></feed>
